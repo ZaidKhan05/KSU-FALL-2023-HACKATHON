@@ -22,7 +22,7 @@ class boxTruck extends container{
     double width = 8;
     double weight = 26000;
     void add(boxes x){
-        System.out.println("Cannot add to box truck");
+        System.out.println("Cannot add to box truc");
     }
     void remove(boxes x){
         System.out.println("Cannot remove from box truck");
