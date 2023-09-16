@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 abstract class boxes{
     double length;
     double height;
@@ -12,8 +14,16 @@ abstract class container {
     double height;
     double width;
     double weight;
-    abstract void add(boxes x);
-    abstract void remove(boxes x);
+
+    //write a stack for this to put boxes in containers
+    Stack<boxes> boxStack = new Stack<boxes>();
+    void add(boxes x){
+        boxStack.push(x);
+    }
+    void remove(boxes x){
+        boxStack.pop();
+    }
+
 }
 
 class boxTruck extends container{
@@ -22,11 +32,12 @@ class boxTruck extends container{
     double width = 8;
     double weight = 26000;
     void add(boxes x){
-        System.out.println("Cannot add to box truc");
+        System.out.println("Cannot add to box truck");
     }
     void remove(boxes x){
         System.out.println("Cannot remove from box truck");
     }
+
 }
 
 class shippingContainer extends container{
@@ -40,6 +51,7 @@ class shippingContainer extends container{
     void remove(boxes x){
         System.out.println("Cannot remove from shipping container");
     }
+
 }
 
 class storageUnit extends container{
@@ -66,6 +78,7 @@ class pallet extends container{
     void remove(boxes x){
         System.out.println("Cannot remove from pallet");
     }
+    
 }
 
 
